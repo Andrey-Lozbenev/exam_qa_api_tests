@@ -3,12 +3,17 @@ package dzr.hanom.api;
 import com.codeborne.selenide.logevents.SelenideLogger;
 import com.github.javafaker.Faker;
 import dzr.hanom.Specs.Specs;
+import dzr.hanom.models.LoginErrorResponse;
 import dzr.hanom.models.UserBody;
+import dzr.hanom.models.UserLoginResponse;
 import io.qameta.allure.selenide.AllureSelenide;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.DisplayName;
 import org.junit.jupiter.api.Tag;
 import org.junit.jupiter.api.Test;
+import static org.assertj.core.api.AssertionsForClassTypes.assertThat;
+import static org.hamcrest.Matchers.*;
+import static org.junit.jupiter.api.Assertions.assertEquals;
 
 import static dzr.hanom.Specs.Specs.requestSpecification;
 import static io.restassured.RestAssured.given;
@@ -18,19 +23,17 @@ import static org.hamcrest.Matchers.isEmptyString;
 
 public class RequestTests {
 
-
-
     @Test
     @Tag("positive")
     @DisplayName("Проверка успешной авторизации пользователя")
-    void successfulLoginTest() {
+    void successfulLoginTestAssert() {
 
         UserBody userBody = new UserBody();
 
         userBody.setEmail("eve.holt@reqres.in");
         userBody.setPassword("cityslicka");
 
-        given()
+        UserLoginResponse userLoginResponse = given()
                 .spec(requestSpecification)
                 .body(userBody)
                 .when()
@@ -38,12 +41,13 @@ public class RequestTests {
                 .then()
                 .log().all()
                 .statusCode(200)
-                .body("token", is("QpwL5tke4Pnpja7X4"));
+                .extract().as(UserLoginResponse.class);
+        assertEquals("QpwL5tke4Pnpja7X4", userLoginResponse.getToken());
     }
 
     @Test
     @Tag("negative")
-    @DisplayName("Проверка не успешной авторизации пользователя без пароля")
+    @DisplayName("Проверка отказа в авторизации пользователя без пароля")
     void unsuccessfulLoginTest() {
 
         Faker faker = new Faker();
@@ -61,6 +65,7 @@ public class RequestTests {
                 .then()
                 .log().all()
                 .statusCode(400);
+
     }
 
     @Test
@@ -77,7 +82,7 @@ public class RequestTests {
         userBody.setEmail(userEmail);
         userBody.setPassword(userPassword);
 
-        given()
+        LoginErrorResponse loginErrorResponse = given()
                 .spec(requestSpecification)
                 .body(userBody)
                 .when()
@@ -85,7 +90,9 @@ public class RequestTests {
                 .then()
                 .log().all()
                 .statusCode(400)
-                .body("error", is("Note: Only defined users succeed registration"));
+                .extract().as(LoginErrorResponse.class);
+        assertEquals("Note: Only defined users succeed registration", loginErrorResponse.getError());
+
     }
 
     @Test
