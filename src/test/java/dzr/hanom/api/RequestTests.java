@@ -57,7 +57,7 @@ public class RequestTests {
 
         userBody.setEmail(userEmail);
 
-        given()
+       given()
                 .spec(requestSpecification)
                 .body(userEmail)
                 .when()
