@@ -50,7 +50,7 @@ gradle clean test
 
 ## :bar_chart: Отчеты о прохождении тестов доступны в Allure
 
-### <img width="3%" title="Allure" src="media/logo/Allure_Report.svg"> Allure
+### <img width="3%" title="Allure" src="media/logo/Allure_Report.svg">  [Allure](https://jenkins.autotests.cloud/job/exam_qa_api_tests/2/allure/)
 
 #### Главная страница
 
