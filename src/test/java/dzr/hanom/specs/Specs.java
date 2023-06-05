@@ -1,4 +1,4 @@
-package dzr.hanom.Specs;
+package dzr.hanom.specs;
 
 import io.restassured.http.ContentType;
 import io.restassured.specification.RequestSpecification;
