@@ -1,13 +1,10 @@
 package dzr.hanom.Specs;
 
-import io.restassured.builder.ResponseSpecBuilder;
 import io.restassured.http.ContentType;
 import io.restassured.specification.RequestSpecification;
-import io.restassured.specification.ResponseSpecification;
 
 import static dzr.hanom.helpers.CustomApiListener.allureWithCustomTemplates;
 import static io.restassured.RestAssured.with;
-
 
 
 public class Specs {
