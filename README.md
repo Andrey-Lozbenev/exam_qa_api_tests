@@ -65,3 +65,20 @@ gradle clean test
 После завершения сборки сообщение с основными результатами прогона тестов отправляется через созданный бот в выбранный телеграм-канал
 <p align="center">
 <img src="media/img/Telegram.png">
+
+## <img src="media/logo/Allure_TO.svg" width="25" height="25"  alt="Allure"/></a> Интеграция с <a target="_blank" href="https://allure.autotests.cloud/project/3415/dashboards">Allure TestOps</a>
+
+### Dashboard с  результатами тестирования
+<p align="center">
+<img title="Allure Graphics" src="media/img/AllureDashboard.png">
+</p>
+
+### Пример отчёта выполнения одного из автотестов
+<p align="center">
+<img title="Allure Graphics" src="media/img/AllureTest.png">
+</p>
+
+## <img src="media/logo/Jira.svg" width="25" height="25"  alt="Allure"/></a> Интеграция с <a target="_blank" href="https://jira.autotests.cloud/browse/HOMEWORK-759">Atlassian Jira</a>
+<p align="center">
+<img title="Jira" src="media/img/Jira.png">
+</p>
