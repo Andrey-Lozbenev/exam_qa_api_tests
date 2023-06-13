@@ -28,7 +28,7 @@
 > - Проверка отказа в регитсрации у пользовтеля со сторонними регистрационными данными
 > - Проверка успешного удаления чего-то :)
 > - Проверка успешной авторизации пользователя
-## <img width="4%" title="Jenkins" src="media/logo/Jenkins.svg"> Запуск тестов из [Jenkins](https://jenkins.autotests.cloud/job/exam_qa_api_tests/)
+## <img width="4%" title="Jenkins" src="media/logo/Jenkins.svg"> Запуск тестов из [Jenkins](https://jenkins.autotests.cloud/job/Students/job/exam_qa_api_tests/)
 
 Для запуска тестов из Jenkins:
 1. Необходимо нажать кнопку "Собрать".
