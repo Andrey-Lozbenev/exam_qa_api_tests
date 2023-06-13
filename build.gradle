@@ -4,7 +4,6 @@ plugins {
     id 'io.qameta.allure' version "2.11.2"
 }
 
-def allureVersion = "2.21.0"
 
 allure {
     report {
@@ -43,6 +42,3 @@ tasks.withType(JavaCompile) {
     options.encoding = 'UTF-8'
 }
 
-
-sourceCompatibility = JavaVersion.VERSION_11
-targetCompatibility = JavaVersion.VERSION_11
