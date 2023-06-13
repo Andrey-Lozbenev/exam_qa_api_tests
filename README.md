@@ -66,7 +66,7 @@ gradle clean test
 <p align="center">
 <img src="media/img/Telegram.png">
 
-## <img src="media/logo/Allure_TO.svg" width="25" height="25"  alt="Allure"/></a> Интеграция с <a target="_blank" href="https://allure.autotests.cloud/project/3415/dashboards">Allure TestOps</a>
+## <img src="media/logo/Allure_TO.svg" width="25" height="25"  alt="Allure"/></a> Интеграция с <a target="_blank" href="https://allure.autotests.cloud/project/3418/dashboards">Allure TestOps</a>
 
 ### Dashboard с  результатами тестирования
 <p align="center">
